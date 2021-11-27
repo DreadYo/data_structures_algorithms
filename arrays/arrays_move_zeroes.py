@@ -23,7 +23,7 @@ Constraints:
 Follow up: Could you minimize the total number of operations done?
 """
 
-# The first solution that I comes to mind, as always, it's the brute force solution
+# The first solution that comes to mind, as always, it's the brute force solution
 
 def move_zeroes_brute_force(nums):
     for i in range(len(nums)):
