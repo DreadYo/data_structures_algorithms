@@ -7,7 +7,7 @@
 # push/pop      -   O(1)
 # insert        -   O(n)
 # delete        -   O(n)
-
+# search        -   O(n)
 
 array = ['a', 'b', 'c', 'd']
 
