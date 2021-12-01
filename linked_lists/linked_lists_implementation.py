@@ -54,6 +54,10 @@ class LinkedList:
         self._tail = self._head
         self._length = 0
 
+    @property
+    def length(self):
+        return self._length
+
     def append(self, value):                # Time Complexity - O(1)
         """
         Add element to the end of the Linked List
@@ -95,6 +99,19 @@ class LinkedList:
         for _ in range(index):
             current_node = current_node.next
         return current_node
+
+    def find_by_value(self, value):    # Time Complexity - O(n)
+        """
+        Find and return the first node with specific value in Linked List
+        :param value: value to find
+        :return: node
+        """
+        current_node = self._head
+        while current_node:
+            if current_node.value == value:
+                return current_node
+            current_node = current_node.next
+        return None
 
     def insert(self, index, value):         # Time Complexity - O(n). Since this requires traversal of the list
         """
@@ -141,7 +158,37 @@ class LinkedList:
         pre = self._traverse_to_index(index-1)
         current_index = pre.next
         pre.next = current_index.next
+        if current_index.next is None:
+            self._tail = pre
         self._length -= 1
+
+    def remove_by_value(self, value):                # Time Complexity - O(n). Since this requires traversal of the list
+        """
+        Deleting a node based on its position.
+        :param value:
+        :return:
+        """
+        # check params
+        if self._head is None:
+            print("Linked List is empty. Nothing to delete.")
+            return
+        current_node = self._head
+        if current_node.value == value:
+            self._head = self._head.next
+            if self._head is None or self._head.next is None:
+                self._tail = self._head
+            self._length -= 1
+            return
+        while current_node.next is not None and current_node.next.value != value:
+            current_node = current_node.next
+        if current_node.next is not None:
+            current_node.next = current_node.next.next
+            if current_node.next is None:
+                self._tail = current_node
+            self._length -= 1
+            return
+        else:
+            print("Given value not found")
 
     def print_list(self):
         """
@@ -156,6 +203,65 @@ class LinkedList:
             array.append(current_node.value)
             current_node = current_node.next
         return array, self._length
+
+    def reverse_bad(self):
+        """
+        In this function I go through linked list and put values from linked list in array
+        Then I reverse this array using built-in method reverse() (in class list).
+        Then I initialize new linked list from beginning,
+        go through my array and add new element into linked list using method append() (class LinkedList)
+        Time Complexity - O(n)
+        I go twice through array
+        And I had to create array and additional linked list
+        Space complexity - O(n)
+        :return:
+        """
+        array = []
+        curr = self._head
+        while curr:
+            array.append(curr.value)
+            curr = curr.next
+        array.reverse()
+        self.__init__()
+        for el in array:
+            self.append(el)
+
+    def reverse(self):
+        """
+        More efficient reverse method.
+        Time complexity - O(n)
+        Space complexity - O(1)
+        :return:
+        """
+        # If the list is empty or consists of 1 item only we return the list as it is.
+        if self._length <= 1:
+            return self._head
+        # Update the tail of the list to point to the head
+        # as after reversing the present head will become the last node
+        self._tail = self._head
+        # Create two nodes first and second
+        # which point to the first and second nodes of the list respectively.
+        first = self._head
+        second = first.next
+        # Run a loop until second becomes None
+        while second:
+            # Inside the loop create a temporary node which points to the 'next' of the second node (third node)
+            temp = second.next
+            # Update the 'next' of the second node to point to the first node so that the link is now reversed
+            # (2nd node points to 1st node instead of 3rd).
+            second.next = first
+            # Then update the first and second nodes to be equal to the second and temporary nodes respectively.
+            first = second
+            second = temp
+        # In the next iteration, 'second' will point to the 3rd node and 'first' to the 2nd
+        # And the 'second.next = first' statement will make the 3rd node point to the 2nd node instead of the 4th.
+        # And this will go on till 'second' becomes None and by then all the links will be reversed.
+        # Finally, update the 'next' of the head (which is still the original head) point to None
+        # as it is effectively the last node
+        self._head.next = None
+        # And then update the head to be equal to 'first',
+        # which by now points to the last node of the original list
+        self._head = first
 
 
 if __name__ == '__main__':
@@ -179,12 +285,26 @@ if __name__ == '__main__':
     my_linked_list.insert(0, 0)
     print(my_linked_list.print_list())
     my_linked_list.insert(200, 200)
-    # remove
     print(my_linked_list.print_list())
+
+    # remove
     my_linked_list.remove(2)
     print(my_linked_list.print_list())
     my_linked_list.remove(5)
     print(my_linked_list.print_list())
+
     my_linked_list.remove(0)
+    print(my_linked_list.print_list())
+
+    my_linked_list.reverse_bad()
+    print(my_linked_list.print_list())
+
+    my_linked_list.reverse()
+    print(my_linked_list.print_list())
+
+    # node = my_linked_list.find_by_value(5)
+    # print(node, node.value)
+
+    my_linked_list.remove_by_value(5)
     print(my_linked_list.print_list())
 
