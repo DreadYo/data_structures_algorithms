@@ -57,6 +57,10 @@ class DoublyLinkedList:
         self._tail = self._head
         self._length = 0
 
+    @property
+    def length(self):
+        return self._length
+
     def append(self, value):                # Time Complexity - O(1)
         """
         Add element to the end of the Doubly Linked List
@@ -157,6 +161,8 @@ class DoublyLinkedList:
         pre.next = after
         if after is not None:
             after.previous = pre
+        else:
+            self._tail = pre
         self._length -= 1
 
     def print_list(self):
