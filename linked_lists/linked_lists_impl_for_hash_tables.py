@@ -1,10 +1,4 @@
-# Linked lists are, as the name suggests, a list which is linked.
-# It consists of nodes which contain data and a pointer to the next node in the list.
-# The list is connected with the help of these pointers.
-# These nodes are scattered in memory, quite like the buckets in a hash table.
-# The node where the list starts is called the head of the list
-# and the node where it ends, or last node, is called the tail of the list.
-# The average time complexity of some operations involving linked lists are as follows:
+# Linked List specially for Hash Table implementation
 
 # Look-up   -   O(n)
 # Insert    -   O(n)
@@ -108,6 +102,8 @@ class LinkedList:
         """
         current_node = self._head
         while current_node:
+            # will work only with hash table class
+            # because value have to contain array with 2 params [key, value]
             if current_node.value[0] == value:
                 return current_node
             current_node = current_node.next
@@ -173,12 +169,16 @@ class LinkedList:
             print("Linked List is empty. Nothing to delete.")
             return
         current_node = self._head
+        # will work only with hash table class
+        # because value have to contain array with 2 params [key, value]
         if current_node.value[0] == value:
             self._head = self._head.next
             if self._head is None or self._head.next is None:
                 self._tail = self._head
             self._length -= 1
             return
+        # will work only with hash table class
+        # because value have to contain array with 2 params [key, value]
         while current_node.next is not None and current_node.next.value[0] != value:
             current_node = current_node.next
         if current_node.next is not None:
