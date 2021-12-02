@@ -32,7 +32,8 @@ class Stack:
         if len(self.array) > 0:
             return self.array[-1]
         else:
-            return "Stack is empty"
+            # print("Stack is empty")
+            return None
 
     def push(self, value):
         """
