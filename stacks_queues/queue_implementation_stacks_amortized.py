@@ -106,6 +106,8 @@ class MyQueue:
 
     def peek(self) -> int:
         print("peek")
+        if self.stack1.is_empty() and self.stack2.is_empty():
+            self.front = None
         if not self.stack2.is_empty():
             self.front = self.stack2.peek()
         return self.front
