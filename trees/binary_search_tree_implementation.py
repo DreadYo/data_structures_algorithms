@@ -1,4 +1,25 @@
+"""
+Binary Search Trees are a non-linear data structure.
+They consist of a root node and zero, one or two children where the children can again have 0, 1, or 2 nodes
+as their children and so on
+In most cases, the time complexity of operations on a BST, which include,
+lookups, insertions and deletions, take O(log N) time
+Except for the worst case, where the tree is heavily unbalanced
+with all the nodes being on one side of the tree.
+In that case, it basically becomes a linked list and the time complexities go up to O(n)
+
+Lookup      -   O(logn)
+Insert      -   O(logn)
+Delete      -   O(logn)
+
+"""
+
+
 class Node:
+    """
+    A node class to store information about each node
+    It stores the data and the pointers to its left and right children
+    """
     def __init__(self, value):
         self.left = None
         self.right = None
@@ -6,6 +27,9 @@ class Node:
 
 
 class BinarySearchTree:
+    """
+    Binary Search Tree class
+    """
     def __init__(self):
         self.root = None
 
