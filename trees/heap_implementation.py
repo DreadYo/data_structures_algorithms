@@ -19,6 +19,9 @@ Lookup      -   O(n)
 Insert      -   O(logn)
 Delete      -   O(logn)
 
+Binary Heap is very efficient if you need to do some COMPARATIVE operations,
+for example to get things (numbers) more than given number.
+
 """
 
 
