@@ -199,8 +199,8 @@ def traverse(node):
     tree = {
         "value": node.value
     }
-    tree.left = None if node.left is None else traverse(node.left)
-    tree.right = None if node.right is None else traverse(node.right)
+    tree["left"] = None if node.left is None else traverse(node.left)
+    tree["right"] = None if node.right is None else traverse(node.right)
     return tree
 
 
@@ -217,6 +217,7 @@ if __name__ == "__main__":
     tree.insert(1)
 
     tree.print_tree()
+    print(traverse(tree.root))
 
     # print(tree.lookup(4).value)
     print(tree.lookup(9).value)
@@ -228,6 +229,8 @@ if __name__ == "__main__":
     tree.print_tree()
     tree.remove(9)
     tree.print_tree()
+
+    print(traverse(tree.root))
 
 
 
