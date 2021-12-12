@@ -4,6 +4,7 @@ For the first iteration we fix the first element, assuming it is at its correct 
 Then we loop through the rest of the elements and insert them in their correct positions,
 with respect to the already sorted part of the array
 Time complexity is O(n^2) in worst case. In best - O(n), when the list is almost sort or small datasets.
+Space complexity - O(1)
 """
 
 
