@@ -7,7 +7,8 @@ It requires us to keep track of the children of each node we visit
 In a queue, so that after traversal through a level is complete,
 our algorithm knows which node to visit next.
 
-Time complexity is O(n) but the space complexity can become a problem in some cases.
+Time complexity     -   O(n)
+Space complexity    -   O(n)
 
 To implement BFS, we'll need a Binary Search Tree, which we have already coded. So we'll use that.
 """
