@@ -60,7 +60,6 @@ class Queue:
         and then it will update the last node to point to the new node
         Time complexity will be O(1)
         :param value: element to add
-        :return:
         """
         new_node = Node(value)
         if self.length == 0:
@@ -74,9 +73,9 @@ class Queue:
     def dequeue(self):
         """
         Remove the front element of the queue
-        #If the queue is empty, it will print an appropriate message
-        #Else, it will simply make the first pointer point to the next element of the first pointer.
-        :return:
+        If the queue is empty, it will print an appropriate message
+        Else, it will simply make the first pointer point to the next element of the first pointer.
+        :return: value of the front element
         """
         pop_node = self.first
         if not pop_node:
@@ -90,7 +89,7 @@ class Queue:
         # effectively deleting the top element.
         self.first = self.first.next
         self.length -= 1
-        return pop_node
+        return pop_node.value
 
     def is_empty(self):
         """
@@ -145,22 +144,18 @@ if __name__ == "__main__":
     print("peek = ", my_queue.peek())
     my_queue.print_queue()
     # dequeue
-    node = my_queue.dequeue()
-    print("dequeue = ", node.value)
+    print("dequeue = ", my_queue.dequeue())
     print("peek = ", my_queue.peek())
     my_queue.print_queue()
     #
-    node = my_queue.dequeue()
-    print("dequeue = ", node.value)
+    print("dequeue = ", my_queue.dequeue())
     print("peek = ", my_queue.peek())
     my_queue.print_queue()
     #
-    node = my_queue.dequeue()
-    print("dequeue = ", node.value)
+    print("dequeue = ", my_queue.dequeue())
     print("peek = ", my_queue.peek())
     my_queue.print_queue()
     #
-    node = my_queue.dequeue()
-    print("dequeue = ", node.value)
+    print("dequeue = ", my_queue.dequeue())
     print("peek = ", my_queue.peek())
     my_queue.print_queue()
