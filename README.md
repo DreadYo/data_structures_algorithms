@@ -27,4 +27,5 @@ Resolving problem with comparing arrays
    - [Searching + BFS + DFS](https://github.com/DreadYo/data_structures_algorithms/tree/main/algorithms_searching)
    - [Dynamic Programming](https://github.com/DreadYo/data_structures_algorithms/tree/main/dynamic_programming)
 
-![erer](https://github.com/DreadYo/data_structures_algorithms/blob/main/Master_the_Interview_Click_here_for_Course_Link_.png?raw=true)![image](https://user-images.githubusercontent.com/35234991/146245323-4697b969-726f-4be7-b574-fd1cb17d0041.png)
+![image](https://user-images.githubusercontent.com/35234991/146245323-4697b969-726f-4be7-b574-fd1cb17d0041.png)
+![image](https://github.com/DreadYo/data_structures_algorithms/blob/43dab3f100357a928d9d1fd3ec3c8858261053ec/Master_the_Interview.png)
