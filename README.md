@@ -1,2 +1,3 @@
-# data_structures_algorithms
-Data Structures and Algorithms in Python
+# Data Structures and Algorithms in Python
+Codes, implemetations and exercises from Udemy course 
+Master the Coding Interview: Data Structures + Algorithms
